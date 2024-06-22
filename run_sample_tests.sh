@@ -1,4 +1,6 @@
 #!/bin/bash
 
+SCHEME='Counter'
+
 cd SampleApp
-xcodebuild test -project Counter.xcodeproj -scheme Counter
+xcodebuild test -scheme $SCHEME CODE_SIGNING_ALLOWED='NO'
