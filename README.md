@@ -25,19 +25,8 @@ When using [ViewInspector](https://github.com/nalexn/ViewInspector/) to unit tes
 - mounts the View, and
 - waits for the closure to run.
 
-```swift
-@MainActor
-func test_incrementOnce() throws {
-    var sut = ContentView()
-    let expectation = sut.on(\.viewInspectorHook) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        let count = try view.find(viewWithId: "count").text().string()
-        XCTAssertEqual(count, "1")
-    }
-    ViewHosting.host(view: sut)
-    wait(for: [expectation], timeout: 0.01)
-}
-```
+<!-- snippet: with_boilerplate -->
+<!-- endSnippet -->
 
 That's a lot of boilerplate, and it makes it harder to scan for the test intent.
 
@@ -66,17 +55,8 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 
 Now our test can call `update(_:action:)` like this:
 
-```swift
-@MainActor
-func test_incrementOnce() throws {
-    var sut = ContentView()
-    update(&sut) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        let count = try view.find(viewWithId: "count").text().string()
-        XCTAssertEqual(count, "1")
-    }
-}
-```
+<!-- snippet: with_testable_view -->
+<!-- endSnippet -->
 
 That's much simpler, hiding the boilerplate that isn't part of the test-specific intent.
 
@@ -84,20 +64,8 @@ That's much simpler, hiding the boilerplate that isn't part of the test-specific
 
 I prefer not to have assertions inside closures. If something goes wrong with the infrastructure and the closure doesn't run, it's not obvious that the test will fail. So I like to set up an optional variable, capture the value inside the closure, then check the result on the outside.
 
-```swift
-@MainActor
-func test_incrementOnce() throws {
-    var sut = ContentView()
-    var count: String?
-
-    update(&sut) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        count = try view.find(viewWithId: "count").text().string()
-    }
-
-    XCTAssertEqual(count, "1")
-}
-```
+<!-- snippet: scannable -->
+<!-- endSnippet -->
 
 That lets us add blank lines to separate the Arrange/Act/Assert sections of the test.
 
