@@ -26,6 +26,21 @@ When using [ViewInspector](https://github.com/nalexn/ViewInspector/) to unit tes
 - waits for the closure to run.
 
 <!-- snippet: with_boilerplate -->
+<a id='snippet-with_boilerplate'></a>
+```swift
+@MainActor
+func test_incrementOnce_withBoilerplate() throws {
+    var sut = ContentView()
+    let expectation = sut.on(\.viewInspectorHook) { view in
+        try view.find(viewWithId: "increment").button().tap()
+        let count = try view.find(viewWithId: "count").text().string()
+        XCTAssertEqual(count, "1")
+    }
+    ViewHosting.host(view: sut)
+    wait(for: [expectation], timeout: 0.01)
+}
+```
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L15-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_boilerplate' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That's a lot of boilerplate, and it makes it harder to scan for the test intent.
@@ -56,6 +71,19 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 Now our test can call `update(_:action:)` like this:
 
 <!-- snippet: with_testable_view -->
+<a id='snippet-with_testable_view'></a>
+```swift
+@MainActor
+func test_incrementOnce_withTestableView() throws {
+    var sut = ContentView()
+    update(&sut) { view in
+        try view.find(viewWithId: "increment").button().tap()
+        let count = try view.find(viewWithId: "count").text().string()
+        XCTAssertEqual(count, "1")
+    }
+}
+```
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L29-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_testable_view' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That's much simpler, hiding the boilerplate that isn't part of the test-specific intent.
@@ -65,6 +93,22 @@ That's much simpler, hiding the boilerplate that isn't part of the test-specific
 I prefer not to have assertions inside closures. If something goes wrong with the infrastructure and the closure doesn't run, it's not obvious that the test will fail. So I like to set up an optional variable, capture the value inside the closure, then check the result on the outside.
 
 <!-- snippet: scannable -->
+<a id='snippet-scannable'></a>
+```swift
+@MainActor
+func test_incrementOnce_scannable() throws {
+    var sut = ContentView()
+    var count: String?
+
+    update(&sut) { view in
+        try view.find(viewWithId: "increment").button().tap()
+        count = try view.find(viewWithId: "count").text().string()
+    }
+
+    XCTAssertEqual(count, "1")
+}
+```
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L41-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-scannable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That lets us add blank lines to separate the Arrange/Act/Assert sections of the test.
