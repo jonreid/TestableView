@@ -12,6 +12,7 @@ final class ContentViewTests: XCTestCase {
         XCTAssertEqual(count, "0")
     }
 
+    // begin-snippet: with_boilerplate
     @MainActor
     func test_incrementOnce_withBoilerplate() throws {
         var sut = ContentView()
@@ -23,7 +24,9 @@ final class ContentViewTests: XCTestCase {
         ViewHosting.host(view: sut)
         wait(for: [expectation], timeout: 0.01)
     }
+    // end-snippet
 
+    // begin-snippet: with_testable_view
     @MainActor
     func test_incrementOnce_withTestableView() throws {
         var sut = ContentView()
@@ -33,7 +36,9 @@ final class ContentViewTests: XCTestCase {
             XCTAssertEqual(count, "1")
         }
     }
+    // end-snippet
 
+    // begin-snippet: scannable
     @MainActor
     func test_incrementOnce_scannable() throws {
         var sut = ContentView()
@@ -46,4 +51,5 @@ final class ContentViewTests: XCTestCase {
 
         XCTAssertEqual(count, "1")
     }
+    // end-snippet
 }
