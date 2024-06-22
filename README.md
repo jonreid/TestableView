@@ -3,6 +3,8 @@
 [![Mastodon Follow](https://img.shields.io/mastodon/follow/109765011064804734?domain=https%3A%2F%2Fiosdev.space
 )](https://iosdev.space/@qcoding)
 
+TestableView improves SwiftUI unit testing by cutting through the clutter of boilerplate code, letting you zero in on what matters: your test's intent.
+
 <!-- toc -->
 <!-- endToc -->
 
