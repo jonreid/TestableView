@@ -49,7 +49,7 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 
 ## Use it in your test
 
-Now our test can call `update(_:action:)`:
+Now our test can call `update(_:action:)` like this:
 
 ```swift
 @MainActor
@@ -62,6 +62,32 @@ func test_incrementOnce() throws {
     }
 }
 ```
+
+That's much simpler, hiding the boilerplate that isn't part of the test-specific intent.
+
+### Final improvements for scannability
+
+I prefer not to have assertions inside closures. If something goes wrong with the infrastructure and the closure doesn't run, it's not obvious that the test will fail. So I like to set up an optional variable, capture the value inside the closure, then check the result on the outside.
+
+```swift
+@MainActor
+func test_incrementOnce() throws {
+    var sut = ContentView()
+    var count: String?
+
+    update(&sut) { view in
+        try view.find(viewWithId: "increment").button().tap()
+        count = try view.find(viewWithId: "count").text().string()
+    }
+
+    XCTAssertEqual(count, "1")
+}
+```
+
+That lets us add blank lines to separate the Arrange/Act/Assert sections of the test.
+
+
+Now we have a SwiftUI unit test that is easy to scan!
 
 ## Author
 
