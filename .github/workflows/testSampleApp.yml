@@ -1,4 +1,4 @@
-name: TestSampleApp
+name: Test sample app
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: Test sample app
+    name: Build and test
     runs-on: macos-13
     steps:
     - uses: actions/checkout@v4
