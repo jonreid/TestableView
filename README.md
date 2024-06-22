@@ -3,6 +3,11 @@
 [![Mastodon Follow](https://img.shields.io/mastodon/follow/109765011064804734?domain=https%3A%2F%2Fiosdev.space
 )](https://iosdev.space/@qcoding)
 
+<!-- toc -->
+<!-- endToc -->
+
+## Boilerplate example
+
 When using [ViewInspector](https://github.com/nalexn/ViewInspector/) to unit test a SwiftUI View that uses `@State` or `@Environment`, the [simplest approach](https://github.com/nalexn/ViewInspector/blob/0.10.0/guide.md#views-using-state-environment-or-environmentobject) is to add a hook called on `didAppear`. The test then:
 
 - wraps a closure into that hook,
