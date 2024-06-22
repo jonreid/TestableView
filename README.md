@@ -58,6 +58,11 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 3. Make sure to call the hook at the end of your view:
 
 <!-- snippet: trigger -->
+<a id='snippet-trigger'></a>
+```swift
+.onAppear { self.viewInspectorHook?(self) }
+```
+<sup><a href='/SampleApp/Counter/ContentView.swift#L16-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-trigger' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 ### Test code
