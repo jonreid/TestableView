@@ -13,7 +13,9 @@ struct ContentView: TestableView {
             .id("increment")
             .padding()
         }
+        // begin-snippet: trigger
         .onAppear { self.viewInspectorHook?(self) }
+        // end-snippet
     }
 }
 

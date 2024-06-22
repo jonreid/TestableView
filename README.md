@@ -57,9 +57,8 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 2. Redefine your View as a `TestableView`. Xcode will tell you how to define your hook property.
 3. Make sure to call the hook at the end of your view:
 
-```swift
-.onAppear { self.viewInspectorHook?(self) }
-```
+<!-- snippet: trigger -->
+<!-- endSnippet -->
 
 ### Test code
 
