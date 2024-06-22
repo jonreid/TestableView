@@ -1,4 +1,4 @@
-name: Test sample app
+name: Sample app
 
 on:
   workflow_dispatch:
