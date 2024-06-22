@@ -9,11 +9,11 @@ import XCTest
 extension XCTestCase {
     @MainActor func update<V: TestableView>(
         _ sut: inout V,
-        actionCapturingResult: @escaping ((InspectableView<ViewType.View<V>>) throws -> Void),
+        action: @escaping ((InspectableView<ViewType.View<V>>) throws -> Void),
         file: StaticString = #filePath,
         line: UInt = #line
     ) {
-        let expectation = sut.on(\.viewInspectorHook, file: file, line: line, perform: actionCapturingResult)
+        let expectation = sut.on(\.viewInspectorHook, file: file, line: line, perform: action)
         ViewHosting.host(view: sut)
         wait(for: [expectation], timeout: 0.01)
     }
