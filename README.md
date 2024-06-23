@@ -15,7 +15,8 @@ TestableView improves SwiftUI unit testing by cutting through the clutter of boi
     * [Test code](#test-code)
   * [Use it in your test](#use-it-in-your-test)
     * [Final improvements for scannability](#final-improvements-for-scannability)
-  * [Author](#author)<!-- endToc -->
+  * [Author](#author)
+    * [Acknowledgements](#acknowledgements)<!-- endToc -->
 
 ## Boilerplate example
 
