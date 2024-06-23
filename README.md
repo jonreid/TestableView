@@ -124,3 +124,8 @@ Now we have a SwiftUI unit test that is easy to scan!
 ## Author
 
 Jon Reid is the author of _[iOS Unit Testing by Example](https://iosunittestingbyexample.com)._ His website is [Quality Coding](https://qualitycoding.org).
+
+### Acknowledgements
+
+- Alexey Naumov for creating [ViewInspector](https://github.com/nalexn/ViewInspector)
+- “The regulars” on [my Twitch stream](https://www.twitch.tv/qcoding) for refactoring with me
