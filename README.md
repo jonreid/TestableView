@@ -82,7 +82,7 @@ Now our test can call `inspectChangingView(_:action:)` like this:
 @MainActor
 func test_incrementOnce_withTestableView() throws {
     var sut = ContentView()
-    update(&sut) { view in
+    inspectChangingView(&sut) { view in
         try view.find(viewWithId: "increment").button().tap()
         let count = try view.find(viewWithId: "count").text().string()
         XCTAssertEqual(count, "1")
@@ -106,7 +106,7 @@ func test_incrementOnce_scannable() throws {
     var sut = ContentView()
     var count: String?
 
-    update(&sut) { view in
+    inspectChangingView(&sut) { view in
         try view.find(viewWithId: "increment").button().tap()
         count = try view.find(viewWithId: "count").text().string()
     }
