@@ -130,3 +130,4 @@ Jon Reid is the author of _[iOS Unit Testing by Example](https://iosunittestingb
 
 - Alexey Naumov for creating [ViewInspector](https://github.com/nalexn/ViewInspector)
 - “The regulars” on [my Twitch stream](https://www.twitch.tv/qcoding) for refactoring with me
+- Joe Cursio for suggesting a better name, `inspectChangingView`
