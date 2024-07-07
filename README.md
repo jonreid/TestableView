@@ -74,7 +74,7 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 
 ## Use it in your test
 
-Now our test can call `update(_:action:)` like this:
+Now our test can call `inspectChangingView(_:action:)` like this:
 
 <!-- snippet: with_testable_view -->
 <a id='snippet-with_testable_view'></a>

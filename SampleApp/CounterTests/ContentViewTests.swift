@@ -30,7 +30,7 @@ final class ContentViewTests: XCTestCase {
     @MainActor
     func test_incrementOnce_withTestableView() throws {
         var sut = ContentView()
-        update(&sut) { view in
+        inspectChangingView(&sut) { view in
             try view.find(viewWithId: "increment").button().tap()
             let count = try view.find(viewWithId: "count").text().string()
             XCTAssertEqual(count, "1")
@@ -44,7 +44,7 @@ final class ContentViewTests: XCTestCase {
         var sut = ContentView()
         var count: String?
 
-        update(&sut) { view in
+        inspectChangingView(&sut) { view in
             try view.find(viewWithId: "increment").button().tap()
             count = try view.find(viewWithId: "count").text().string()
         }
