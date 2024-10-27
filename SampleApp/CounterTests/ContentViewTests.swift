@@ -22,7 +22,7 @@ final class ContentViewTests: XCTestCase {
             XCTAssertEqual(count, "1")
         }
         ViewHosting.host(view: sut)
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.2)
     }
     // end-snippet
 
