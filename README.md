@@ -39,7 +39,7 @@ func test_incrementOnce_withBoilerplate() throws {
         XCTAssertEqual(count, "1")
     }
     ViewHosting.host(view: sut)
-    wait(for: [expectation], timeout: 0.2)
+    wait(for: [expectation], timeout: 0.4)
 }
 ```
 <sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L15-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_boilerplate' title='Start of snippet'>anchor</a></sup>
