@@ -15,6 +15,7 @@ extension XCTestCase {
     ) {
         let expectation = sut.on(\.viewInspectorHook, file: file, line: line, perform: action)
         ViewHosting.host(view: sut)
+        defer { ViewHosting.expel() }
         wait(for: [expectation], timeout: 0.4)
     }
 }
