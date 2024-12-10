@@ -14,7 +14,7 @@ TestableView improves SwiftUI unit testing by cutting through the clutter of boi
     * [Production code](#production-code)
     * [Test code](#test-code)
   * [Use it in your test](#use-it-in-your-test)
-    * [Final improvements for scannability](#final-improvements-for-scannability)
+    * [Improvements for safety and scannability](#improvements-for-safety-and-scannability)
   * [Author](#author)
     * [Acknowledgements](#acknowledgements)<!-- endToc -->
 
@@ -39,10 +39,11 @@ func test_incrementOnce_withBoilerplate() throws {
         XCTAssertEqual(count, "1")
     }
     ViewHosting.host(view: sut)
+    defer { ViewHosting.expel() }
     wait(for: [expectation], timeout: 0.4)
 }
 ```
-<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L15-L27' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_boilerplate' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L15-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_boilerplate' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That's a lot of boilerplate, and it makes it harder to scan for the test intent.
@@ -89,7 +90,7 @@ func test_incrementOnce_withTestableView() throws {
     }
 }
 ```
-<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L29-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_testable_view' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L30-L40' title='Snippet source file'>snippet source</a> | <a href='#snippet-with_testable_view' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That's much simpler, hiding the boilerplate that isn't part of the test-specific intent.
@@ -116,7 +117,7 @@ func test_incrementOnce_scannable() throws {
     XCTAssertEqual(count, "1")
 }
 ```
-<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L41-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-scannable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/SampleApp/CounterTests/ContentViewTests.swift#L42-L55' title='Snippet source file'>snippet source</a> | <a href='#snippet-scannable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 That lets us add blank lines to separate the Arrange/Act/Assert sections of the test.
