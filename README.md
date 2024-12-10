@@ -94,9 +94,11 @@ func test_incrementOnce_withTestableView() throws {
 
 That's much simpler, hiding the boilerplate that isn't part of the test-specific intent.
 
-### Final improvements for scannability
+### Improvements for safety and scannability
 
-I prefer not to have assertions inside closures. If something goes wrong with the infrastructure and the closure doesn't run, it's not obvious that the test will fail. So I like to set up an optional variable, capture the value inside the closure, then check the result on the outside.
+I avoid assertions inside closures. If something goes wrong with the infrastructure and the closure doesn't run, will the test fail? Sometimes the infrastructure ensures this, sometimes it doesn't.
+
+So I like to set up an optional variable, capture the value inside the closure, then check the result on the outside.
 
 <!-- snippet: scannable -->
 <a id='snippet-scannable'></a>
@@ -119,8 +121,7 @@ func test_incrementOnce_scannable() throws {
 
 That lets us add blank lines to separate the Arrange/Act/Assert sections of the test.
 
-
-Now we have a SwiftUI unit test that is easy to scan!
+Now we have a SwiftUI unit test that is safer, and easier to scan!
 
 ## Author
 
