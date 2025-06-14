@@ -1,10 +1,6 @@
 # TestableView
 
 [![Sample app](https://github.com/jonreid/TestableView/actions/workflows/sampleApp.yml/badge.svg)](https://github.com/jonreid/TestableView/actions/workflows/sampleApp.yml)
-[![Bluesky](https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff)](https://bsky.app/profile/qualitycoding.org)
-[![Mastodon](https://img.shields.io/mastodon/follow/109765011064804734?domain=https%3A%2F%2Fiosdev.space
-)](https://iosdev.space/@qcoding)
-[![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UC69XtVGLRydpG7o1nkdQs8Q)](https://www.youtube.com/@QualityCoding)
 
 TestableView improves SwiftUI unit testing by cutting through the clutter of boilerplate code, letting you zero in on what matters: your test's intent.
 
@@ -126,12 +122,18 @@ That lets us add blank lines to separate the Arrange/Act/Assert sections of the 
 
 Now we have a SwiftUI unit test that is safer, and easier to scan!
 
-## Author
-
-Jon Reid is the author of _[iOS Unit Testing by Example](https://iosunittestingbyexample.com)._ His website is [Quality Coding](https://qualitycoding.org).
-
 ### Acknowledgements
 
 - Alexey Naumov for creating [ViewInspector](https://github.com/nalexn/ViewInspector)
 - “The regulars” on [my Twitch stream](https://www.twitch.tv/qcoding) for refactoring with me
 - Joe Cursio for suggesting a better name, `inspectChangingView`
+
+## About the Author
+
+Jon Reid is the author of _[iOS Unit Testing by Example](https://iosunittestingbyexample.com)._  
+Find more at [Quality Coding](https://qualitycoding.org).
+
+[![Bluesky](https://img.shields.io/badge/Bluesky-0285FF?logo=bluesky&logoColor=fff)](https://bsky.app/profile/qualitycoding.org)
+[![Mastodon](https://img.shields.io/mastodon/follow/109765011064804734?domain=https%3A%2F%2Fiosdev.space
+)](https://iosdev.space/@qcoding)
+[![YouTube](https://img.shields.io/youtube/channel/subscribers/UC69XtVGLRydpG7o1nkdQs8Q)](https://www.youtube.com/@QualityCoding)
