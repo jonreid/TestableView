@@ -3,18 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FD362832C274B1B00CFF425 /* CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD362822C274B1B00CFF425 /* CounterApp.swift */; };
-		0FD362852C274B1B00CFF425 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD362842C274B1B00CFF425 /* ContentView.swift */; };
-		0FD362872C274B1B00CFF425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD362862C274B1B00CFF425 /* Assets.xcassets */; };
-		0FD3628B2C274B1B00CFF425 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD3628A2C274B1B00CFF425 /* Preview Assets.xcassets */; };
-		0FD362AF2C274BDF00CFF425 /* TestableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD362AE2C274BDF00CFF425 /* TestableView.swift */; };
-		0FD362B12C274C1F00CFF425 /* UpdateTestableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD362B02C274C1F00CFF425 /* UpdateTestableView.swift */; };
 		0FD362B42C274C3E00CFF425 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 0FD362B32C274C3E00CFF425 /* ViewInspector */; };
-		0FD362B62C274C5400CFF425 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD362B52C274C5400CFF425 /* ContentViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,17 +22,14 @@
 
 /* Begin PBXFileReference section */
 		0FD3627F2C274B1B00CFF425 /* Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Counter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FD362822C274B1B00CFF425 /* CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterApp.swift; sourceTree = "<group>"; };
-		0FD362842C274B1B00CFF425 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0FD362862C274B1B00CFF425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0FD362882C274B1B00CFF425 /* Counter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Counter.entitlements; sourceTree = "<group>"; };
-		0FD3628A2C274B1B00CFF425 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0FD362902C274B1B00CFF425 /* CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD362AD2C274B7200CFF425 /* Counter.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Counter.xctestplan; sourceTree = "<group>"; };
-		0FD362AE2C274BDF00CFF425 /* TestableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestableView.swift; sourceTree = "<group>"; };
-		0FD362B02C274C1F00CFF425 /* UpdateTestableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTestableView.swift; sourceTree = "<group>"; };
-		0FD362B52C274C5400CFF425 /* ContentViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		0F0425812E6659B40097A081 /* Counter */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Counter; sourceTree = "<group>"; };
+		0F0425892E6659BC0097A081 /* CounterTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CounterTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0FD3627C2C274B1B00CFF425 /* Frameworks */ = {
@@ -64,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				0FD362AD2C274B7200CFF425 /* Counter.xctestplan */,
-				0FD362812C274B1B00CFF425 /* Counter */,
-				0FD362932C274B1C00CFF425 /* CounterTests */,
+				0F0425812E6659B40097A081 /* Counter */,
+				0F0425892E6659BC0097A081 /* CounterTests */,
 				0FD362802C274B1B00CFF425 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,36 +67,6 @@
 				0FD362902C274B1B00CFF425 /* CounterTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0FD362812C274B1B00CFF425 /* Counter */ = {
-			isa = PBXGroup;
-			children = (
-				0FD362AE2C274BDF00CFF425 /* TestableView.swift */,
-				0FD362822C274B1B00CFF425 /* CounterApp.swift */,
-				0FD362842C274B1B00CFF425 /* ContentView.swift */,
-				0FD362862C274B1B00CFF425 /* Assets.xcassets */,
-				0FD362882C274B1B00CFF425 /* Counter.entitlements */,
-				0FD362892C274B1B00CFF425 /* Preview Content */,
-			);
-			path = Counter;
-			sourceTree = "<group>";
-		};
-		0FD362892C274B1B00CFF425 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				0FD3628A2C274B1B00CFF425 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0FD362932C274B1C00CFF425 /* CounterTests */ = {
-			isa = PBXGroup;
-			children = (
-				0FD362B02C274C1F00CFF425 /* UpdateTestableView.swift */,
-				0FD362B52C274C5400CFF425 /* ContentViewTests.swift */,
-			);
-			path = CounterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +83,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0F0425812E6659B40097A081 /* Counter */,
 			);
 			name = Counter;
 			productName = Counter;
@@ -141,6 +104,9 @@
 			);
 			dependencies = (
 				0FD362922C274B1C00CFF425 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				0F0425892E6659BC0097A081 /* CounterTests */,
 			);
 			name = CounterTests;
 			packageProductDependencies = (
@@ -197,8 +163,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD3628B2C274B1B00CFF425 /* Preview Assets.xcassets in Resources */,
-				0FD362872C274B1B00CFF425 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,9 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD362AF2C274BDF00CFF425 /* TestableView.swift in Sources */,
-				0FD362852C274B1B00CFF425 /* ContentView.swift in Sources */,
-				0FD362832C274B1B00CFF425 /* CounterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +187,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FD362B62C274C5400CFF425 /* ContentViewTests.swift in Sources */,
-				0FD362B12C274C1F00CFF425 /* UpdateTestableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +392,6 @@
 		0FD362A82C274B1C00CFF425 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,7 +414,6 @@
 		0FD362A92C274B1C00CFF425 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
