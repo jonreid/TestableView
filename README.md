@@ -54,7 +54,7 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 
 ### Production code
 
-1. Copy [TestableView.swift](https://github.com/jonreid/TestableView/blob/main/TestableView.swift) into your production code.
+1. Copy [TestableView.swift](https://github.com/jonreid/TestableView/blob/main/TestableView.swift) into your production code. You can also [subscribe to my blog](https://qualitycoding.org/subscribe-swiftui-tdd/), install the custom code snippets, and expand “testableview” into a new file.
 2. Redefine your View as a `TestableView`. Xcode will tell you how to define your hook property.
 3. Make sure to call the hook at the end of your view:
 
@@ -68,7 +68,7 @@ The new XCTestCase method relies on a TestableView type to define the hook for V
 
 ### Test code
 
-1. Copy [InspectChangingView.swift](https://github.com/jonreid/TestableView/blob/main/InspectChangingView.swift) into your test code.
+1. Copy [InspectChangingView.swift](https://github.com/jonreid/TestableView/blob/main/InspectChangingView.swift) into your test code. You can also [subscribe to my blog](https://qualitycoding.org/subscribe-swiftui-tdd/), install the custom code snippets, and expand “inspectchange” into a new file.
 2. Change the `YourModule` placeholder so it does an `@testable import` from the module that defines `TestableView`.
 
 ## Use it in your test
