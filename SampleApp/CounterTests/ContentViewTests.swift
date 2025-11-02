@@ -7,7 +7,7 @@ final class ContentViewTests: XCTestCase {
     func test_initialCount() throws {
         let sut = ContentView()
 
-        let count = try sut.inspect().find(viewWithId: "count").text().string()
+        let count = try sut.inspect().find(viewWithAccessibilityIdentifier: "count").text().string()
 
         XCTAssertEqual(count, "0")
     }
@@ -17,8 +17,8 @@ final class ContentViewTests: XCTestCase {
     func test_incrementOnce_withBoilerplate() throws {
         var sut = ContentView()
         let expectation = sut.on(\.viewInspectorHook) { view in
-            try view.find(viewWithId: "increment").button().tap()
-            let count = try view.find(viewWithId: "count").text().string()
+            try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+            let count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
             XCTAssertEqual(count, "1")
         }
         ViewHosting.host(view: sut)
@@ -32,8 +32,8 @@ final class ContentViewTests: XCTestCase {
     func test_incrementOnce_withTestableView() throws {
         var sut = ContentView()
         inspectChangingView(&sut) { view in
-            try view.find(viewWithId: "increment").button().tap()
-            let count = try view.find(viewWithId: "count").text().string()
+            try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+            let count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
             XCTAssertEqual(count, "1")
         }
     }
@@ -46,8 +46,8 @@ final class ContentViewTests: XCTestCase {
         var count: String?
 
         inspectChangingView(&sut) { view in
-            try view.find(viewWithId: "increment").button().tap()
-            count = try view.find(viewWithId: "count").text().string()
+            try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+            count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
         }
 
         XCTAssertEqual(count, "1")

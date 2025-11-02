@@ -6,11 +6,11 @@ struct ContentView: TestableView {
 
     var body: some View {
         VStack {
-            Text("\(count)").id("count")
+            Text("\(count)").accessibilityIdentifier("count")
             Button("+1") {
                 count += 1
             }
-            .id("increment")
+            .accessibilityIdentifier("increment")
             .padding()
         }
         // begin-snippet: trigger
