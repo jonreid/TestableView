@@ -32,8 +32,8 @@ When using [ViewInspector](https://github.com/nalexn/ViewInspector/) to unit tes
 func test_incrementOnce_withBoilerplate() throws {
     var sut = ContentView()
     let expectation = sut.on(\.viewInspectorHook) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        let count = try view.find(viewWithId: "count").text().string()
+        try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+        let count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
         XCTAssertEqual(count, "1")
     }
     ViewHosting.host(view: sut)
@@ -82,8 +82,8 @@ Now our test can call `inspectChangingView(_:action:)` like this:
 func test_incrementOnce_withTestableView() throws {
     var sut = ContentView()
     inspectChangingView(&sut) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        let count = try view.find(viewWithId: "count").text().string()
+        try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+        let count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
         XCTAssertEqual(count, "1")
     }
 }
@@ -108,8 +108,8 @@ func test_incrementOnce_scannable() throws {
     var count: String?
 
     inspectChangingView(&sut) { view in
-        try view.find(viewWithId: "increment").button().tap()
-        count = try view.find(viewWithId: "count").text().string()
+        try view.find(viewWithAccessibilityIdentifier: "increment").button().tap()
+        count = try view.find(viewWithAccessibilityIdentifier: "count").text().string()
     }
 
     XCTAssertEqual(count, "1")
