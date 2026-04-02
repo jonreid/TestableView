@@ -2,12 +2,12 @@
 // Copyright 2024 Jonathan M. Reid. https://github.com/jonreid/TestableView/blob/main/LICENSE.txt
 // SPDX-License-Identifier: MIT
 
-// swiftlint:disable file_name
 @testable import Counter
 import ViewInspector
 import XCTest
 
 extension XCTestCase {
+    // swiftlint:disable file_name
     @MainActor func inspectChangingView<V: TestableView>(
         _ sut: inout V,
         actionCapturingResult: @escaping ((InspectableView<ViewType.View<V>>) throws -> Void),
