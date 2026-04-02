@@ -8,8 +8,7 @@ import XCTest
 
 extension XCTestCase {
     // swiftlint:disable file_name
-    @MainActor
-    func inspectChangingView<V: TestableView>(
+    @MainActor func inspectChangingView<V: TestableView>(
         _ sut: inout V,
         action: @escaping ((InspectableView<ViewType.View<V>>) throws -> Void),
         file: StaticString = #filePath,
